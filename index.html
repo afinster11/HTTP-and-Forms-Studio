@@ -16,7 +16,7 @@
 	let action = actions[userEngine.value];
 	form.setAttribute('action', action);
 	
-	let searchWord = document.querySelector("[name=q]").value
+	let searchWord = document.querySelector("input[name=q]").value
 }
 		
     window.addEventListener("load", function(){
@@ -33,9 +33,9 @@
 <body>
 
 	<form id='searchForm' action='actions.selectedValue' method = 'GET'>
-    <input id="q" type="text" name="q" >
+    <input  type="text" name="q" >
 		<label>
-			<input id="googleOption" type="radio" name="engine" value="google"> Google
+			<input type='radio' name='engine' value="google"> Google
 		</label>
 		<label>
 			<input id="duckduckgoOption" type="radio" name="engine" value="duckduckgo"> DuckDuckGo

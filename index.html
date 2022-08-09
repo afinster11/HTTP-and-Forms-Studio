@@ -4,26 +4,35 @@
 	<meta charset="utf-8">
 	<script>
 	function setSearchEngine() {
-		console.log("it works");
-	}
-	<button onclick="setSearchEngine">Go Button</button>
-		// TODO: create a handler
+		let actions = {
+			'google': 'https://www.google.com/search',
+			'duckduckGo': 'https://duckduckgo.com/',
+			'bing': 'https://www.bing.com/search',
+			'ask': 'https://www.ask.com/web'
+		};
+		
+	let form = document.getElementById('searchForm');
+	cont engine = document.querySelector("input[name=engine]:checked");
+	let action = actions[engine.value];
+	form.setAttribute('action', action);
+	
+	let searchWord = document.querySelector("[name=q]").value
+}
+		
     window.addEventListener("load", function(){
         // TODO: register the handler
-	let button = document.getElementById("go");
-	button.addEventListener("click", function(event) {
-	event.preventDefault();
-	cont engine = document.querySelector("input[name=engine]:checked");
-	console.log(engine.value);
+	let form = document.getElementIdBy('searchForm');
+	let button = document.getElementById('go');
+	button.addEventListener('click', setSearchEngine);
 	});
-    });
+   
 	</script>
 </head>
 
 <body>
 
-	<form id="searchForm">
-    <input id="SearchTerm" type="text" name="SearchTerm">
+	<form id="searchForm" action='actions.SelectedValue' method = 'GET'>
+    <input id="SearchTerm" type="text" name="q" >
 		<label>
 			<input id=googleOption" type="radio" name="engine" value="google"> Google
 		</label>

@@ -12,8 +12,8 @@
 		};
 		
 	let form = document.getElementById('searchForm');
-	let engine = document.querySelector("input[name=engine]:checked");
-	let action = actions[engine.value];
+	let userEngine = document.querySelector("input[name=engine]:checked");
+	let action = actions[userEngine.value];
 	form.setAttribute('action', action);
 	
 	let searchWord = document.querySelector("[name=q]").value
@@ -31,8 +31,8 @@
 
 <body>
 
-	<form id="searchForm" action='actions.SelectedValue' method = 'GET'>
-    <input id="SearchTerm" type="text" name="q" >
+	<form id='searchForm' action='actions.SelectedValue' method = 'GET'>
+    <input id="q" type="text" name="q" >
 		<label>
 			<input id="googleOption" type="radio" name="engine" value="google"> Google
 		</label>

@@ -22,8 +22,9 @@
     window.addEventListener("load", function(){
         // TODO: register the handler
 	let form = document.getElementIdBy('searchForm');
-	let button = document.getElementById('go');
-	button.addEventListener('click', setSearchEngine);
+    form.addEventListener('submit', setSearchEngine);
+	//let button = document.getElementById('go');
+	//button.addEventListener('click', setSearchEngine);
 	});
    
 	</script>
@@ -31,7 +32,7 @@
 
 <body>
 
-	<form id='searchForm' action='actions.SelectedValue' method = 'GET'>
+	<form id='searchForm' action='actions.selectedValue' method = 'GET'>
     <input id="q" type="text" name="q" >
 		<label>
 			<input id="googleOption" type="radio" name="engine" value="google"> Google
